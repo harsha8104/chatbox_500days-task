@@ -1,0 +1,130 @@
+Technical Documentation - API Integration Guide
+
+Overview
+This guide provides comprehensive instructions for integrating with our REST API for CloudSync Pro services.
+
+Authentication
+All API requests require authentication using Bearer tokens. Obtain your API key from the admin dashboard.
+
+Headers:
+Authorization: Bearer YOUR_API_KEY
+Content-Type: application/json
+
+Base URL: https://api.cloudsync.com/v1
+
+Rate Limiting
+- 1000 requests per hour per API key
+- 100 requests per minute per API key
+- Rate limit headers included in all responses
+
+Endpoints
+
+1. File Upload
+POST /files/upload
+Description: Upload a file to CloudSync Pro
+Parameters:
+- file: Binary file data (required)
+- folder_id: Target folder ID (optional)
+- encrypt: Enable client-side encryption (optional, default: false)
+
+Response:
+{
+  "file_id": "abc123",
+  "filename": "document.pdf",
+  "size": 1048576,
+  "upload_timestamp": "2024-01-15T10:30:00Z",
+  "checksum": "sha256:abc123..."
+}
+
+2. File Download
+GET /files/{file_id}/download
+Description: Download a file by ID
+Parameters:
+- file_id: File identifier (required)
+
+Response: Binary file data
+
+3. File Sharing
+POST /files/{file_id}/share
+Description: Create a shareable link for a file
+Parameters:
+- file_id: File identifier (required)
+- expires_in: Link expiration in days (optional, default: 7)
+- password: Password protection (optional)
+- permissions: 'view' or 'edit' (optional, default: 'view')
+
+Response:
+{
+  "share_id": "share456",
+  "share_url": "https://share.cloudsync.com/abc123",
+  "expires_at": "2024-01-22T10:30:00Z",
+  "password_protected": true
+}
+
+4. Folder Creation
+POST /folders
+Description: Create a new folder
+Parameters:
+- name: Folder name (required)
+- parent_id: Parent folder ID (optional, default: root)
+
+Response:
+{
+  "folder_id": "folder789",
+  "name": "Project Files",
+  "created_at": "2024-01-15T10:35:00Z"
+}
+
+5. List Files and Folders
+GET /folders/{folder_id}/contents
+Description: List contents of a folder
+Parameters:
+- folder_id: Folder identifier (required)
+- page: Page number (optional, default: 1)
+- per_page: Items per page (optional, default: 50)
+
+Response:
+{
+  "items": [
+    {
+      "id": "file123",
+      "type": "file",
+      "name": "report.pdf",
+      "size": 2048576,
+      "modified_at": "2024-01-14T15:20:00Z"
+    }
+  ],
+  "total": 1,
+  "page": 1,
+  "per_page": 50
+}
+
+Error Handling
+All errors follow standard HTTP status codes with JSON error responses:
+
+{
+  "error": {
+    "code": "FILE_NOT_FOUND",
+    "message": "The requested file was not found",
+    "details": "File ID: abc123"
+  }
+}
+
+Common Error Codes:
+- 400: Bad Request - Invalid parameters
+- 401: Unauthorized - Invalid API key
+- 403: Forbidden - Insufficient permissions
+- 404: Not Found - Resource doesn't exist
+- 429: Too Many Requests - Rate limit exceeded
+- 500: Internal Server Error - Server error
+
+SDKs and Libraries
+Official SDKs available for:
+- Python: pip install cloudsync-api
+- Node.js: npm install cloudsync-api
+- Java: Maven dependency available
+- C#: NuGet package available
+
+Support
+For API support, contact: api-support@cloudsync.com
+Documentation updates: docs.cloudsync.com/api

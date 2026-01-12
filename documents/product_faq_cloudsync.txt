@@ -1,0 +1,40 @@
+Product FAQ - CloudSync Pro
+
+Q: What is CloudSync Pro?
+A: CloudSync Pro is our enterprise-grade cloud storage and synchronization solution that allows teams to securely store, share, and collaborate on files across multiple devices and platforms.
+
+Q: How much storage does each user get?
+A: Each user receives 1TB of secure cloud storage with the option to purchase additional storage in 500GB increments at $5/month per increment.
+
+Q: What platforms are supported?
+A: CloudSync Pro supports Windows 10/11, macOS 11+, iOS 14+, Android 8+, and web browsers (Chrome, Firefox, Safari, Edge).
+
+Q: Is my data encrypted?
+A: Yes, all data is encrypted using AES-256 encryption both in transit and at rest. We also support client-side encryption for sensitive documents.
+
+Q: Can I share files with external users?
+A: Yes, you can share files and folders with external users via secure links. You can set expiration dates, passwords, and permission levels (view-only or edit).
+
+Q: What is the maximum file size I can upload?
+A: Individual files can be up to 50GB in size. For larger files, we recommend using our desktop sync client which supports chunked uploads.
+
+Q: How does version control work?
+A: CloudSync Pro maintains up to 30 versions of each file for 90 days. You can restore previous versions through the web interface or desktop client.
+
+Q: What happens if I accidentally delete a file?
+A: Deleted files are moved to the trash bin and can be recovered for up to 90 days. After 90 days, files are permanently deleted.
+
+Q: Is there offline access?
+A: Yes, you can mark files and folders for offline access on mobile devices. These files will be available even without an internet connection.
+
+Q: How do I get support?
+A: Support is available 24/7 via email (support@cloudsync.com), live chat, and phone (1-800-CLOUD-01). Enterprise customers get priority support with 1-hour response time.
+
+Q: What are the pricing plans?
+A: We offer three plans:
+- Basic: $10/user/month (1TB storage)
+- Business: $20/user/month (unlimited storage, advanced admin controls)
+- Enterprise: Custom pricing (unlimited storage, advanced security, dedicated support)
+
+Q: Can I integrate with other tools?
+A: Yes, we integrate with Microsoft 365, Google Workspace, Slack, Salesforce, and over 100 other business applications.

@@ -1,0 +1,6 @@
+{
+  "embedding_dim": 384,
+  "index_type": "flat",
+  "num_vectors": 5,
+  "num_chunks": 5
+}
